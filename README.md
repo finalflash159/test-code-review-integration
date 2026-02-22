@@ -1,14 +1,14 @@
 # test-code-review-integration
 
-API đơn giản với **Node.js**, **TypeScript** và **Express**.
+A simple API with **Node.js**, **TypeScript**, and **Express**.
 
-## Cài đặt
+## Installation
 
 ```bash
 npm install
 ```
 
-## Chạy
+## Running
 
 - **Development** (hot reload):
 
@@ -16,7 +16,7 @@ npm install
   npm run dev
   ```
 
-- **Production** (build rồi chạy):
+- **Production** (build then run):
 
   ```bash
   npm run build
@@ -25,7 +25,15 @@ npm install
 
 ## Endpoints
 
-- `GET /` – Lời chào
+- `GET /` – Welcome message
 - `GET /health` – Health check
 
-Mặc định server chạy tại: http://localhost:3000
+### Items API (`/api/items`)
+
+- `GET /api/items` – List all items
+- `GET /api/items/:id` – Get one item by id
+- `POST /api/items` – Create item (body: `{ "title": "string" }`)
+- `PATCH /api/items/:id` – Update item (body: `{ "title"?, "completed"? }`)
+- `DELETE /api/items/:id` – Delete item
+
+Server runs at http://localhost:3000 by default.
